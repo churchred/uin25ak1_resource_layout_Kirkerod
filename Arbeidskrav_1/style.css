@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+
+:root {
+    --dark_blue: #2A324B;
+    --blue: #58699D;
+    --whitesmoke: #E1E5EE;
+    --white: #fff;
+    --font: "Rubik", serif;
+}
+
+body{
+    background-color: var(--whitesmoke);
+    font-family: var(--font);
+    font-size: 20px;
+    min-height: 100vh;
+    display: flex;
+}
+
+
+main{
+    height: 350px;
+    width: 900px;
+    margin: auto; 
+
+    nav {
+
+        width: 100%;
+        /*background-color: rgb(227, 130, 130);*/
+        display: flex;
+
+        ul {
+            list-style: none;
+            width: fit-content;
+            display: flex;
+            height: 100%;
+            column-gap: .5rem;
+
+
+            li{
+                cursor: pointer;
+                background-color: var(--dark_blue);
+                color: var(--white);
+                padding: 1.5rem 2.8rem;
+                margin: auto;
+                font-family: var(--font);
+                font-size: 1rem;
+                font-weight: bold;
+            }
+
+        }
+    }
+
+    li.target {
+        background-color: var(--white);
+        color: var(--dark_blue);
+    }
+
+    article {
+        background-color: var(--white);
+        padding: 2.5rem;
+        display: grid;
+        row-gap: 1.5rem;
+
+        h2 {
+            font-family: var(--font);
+            font-size: 1.5rem;
+        }
+
+        p {
+            font-family: var(--font);
+            font-size: 1rem;
+        }
+
+        ul {
+            padding-left: 2.5rem;
+            li {
+
+                a {
+                    font-family: var(--font);
+                    font-size: 1rem;
+                }
+            }
+        }
+    }
+}
+
+
+
