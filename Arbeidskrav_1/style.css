@@ -53,6 +53,9 @@ main{
                 font-size: 1rem;
                 font-weight: bold;
             }
+            li:hover{
+                background-color: var(--blue);
+            }
 
         }
     }
@@ -60,6 +63,10 @@ main{
     li.target {
         background-color: var(--white);
         color: var(--dark_blue);
+        cursor: default;
+    }
+    li.target:hover{
+        background-color: var(--white);
     }
 
     article {
@@ -71,6 +78,7 @@ main{
         h2 {
             font-family: var(--font);
             font-size: 1.5rem;
+            color: var(--dark_blue);
         }
 
         p {

@@ -1,9 +1,20 @@
 
 
+
+// Keeps track of the current index (the article we are currently viewing)
+// This stops us from being able to switch to an article we are already viewing
+let currentIndex = -1
+
 // Function to change the current article information.
 // The given index coreponds to the dictonary index in 'resources' array.
 // (0 --> the first dictornary element)
 function changeArticle(index){
+
+    // If we are already viewing the article then nothing should happen
+    if (currentIndex == index){
+        console.log("You are already on: " + resources[index].category)
+        return
+    }
 
     console.log("You switched to: " + resources[index].category)
 
@@ -26,6 +37,9 @@ function changeArticle(index){
     `
     // Overwrites old article
     document.getElementById("articleContent").innerHTML = newHTML
+
+    // To remember which index we are currenly on
+    currentIndex = index
 
     // Change button colors
     changeButtonColor(index)
