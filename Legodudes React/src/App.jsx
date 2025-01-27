@@ -1,35 +1,37 @@
+
+// Imports the style of the site
 import './styles/style.css';
-import { products } from './assets/legodudes';
-import ProductCard from './components/ProductCard';
-import CategoryTitle from './components/CategoryTitle';
-import NavBar from './components/NavBar';
+
+// Imports a product dictionary from a js file
+import { products } from "./assets/Legodudes";
+
+// Import native React components
+import { useState } from "react";
+
+// Imports components
 import Cart from './components/Cart';
+import Header from './components/Header';
+import PageContent from './components/PageContent';
+
 
 
 function App() {
 
+  const [cartCount, setCartCount] = useState(0)
+
   return (
 
-        <div id="content">
+      <div id="content">
+        {/* Code for the Shopping Cart */}
         <Cart/>
-        <header>
-            <a href="index.html" id="logo"><img src="website_images/LD_logo.svg" alt="Legodudes" /></a>
-            <button id="shoppingcart">
-                <span id="cartcount">99</span>
-                <img src="website_images/legocart.svg" alt="Handlevogn" />
-            </button>
-          <NavBar/>
-        </header>
-        <main>
-            <CategoryTitle title="Ninjago"/>
 
-            <div id="productlist">
-              {products.map((product, index) =>
-                  <ProductCard product={product} key={index} />
-              )}
-            </div>
-           
-        </main>
+        {/* Code for Header*/}
+        <Header cartCount={cartCount}/>
+
+        {/* Code for Main body */}
+        <PageContent products={products} setCartCount={setCartCount}/> 
+
+
         <footer>
             <p>2025 &copy; Legodudes</p>
         </footer>
